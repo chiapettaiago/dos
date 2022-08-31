@@ -9,7 +9,7 @@ hide_streamlit_style = """
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
-st.title("Organização de Estoque")
+st.title("Coutt Modas")
 df = pd.read_excel("exemplo.xlsx")
 st.sidebar.title("Opções do App")
 section = st.sidebar.selectbox("Funções", ["Selecionar...", "Organização de Estoque"])
@@ -98,3 +98,10 @@ if section == "Organização de Estoque":
     elif seletor == 26:
         numero = df.query('ID == 26')
         st.table(numero)
+
+about = st.sidebar.selectbox("Informações do sistema", ["Selecionar...", "Sobre o sistema", "Política de Privacidade", "Termos de uso"])
+if about == "Sobre o sistema":
+  st.header("Sistema DoS versão 0.34")
+  st.text("Programador e CEO: Iago Chiapetta")
+  st.text("Programador e Gerente de Qualidade de software: Patrick Gonçalves")
+  st.text("Todos os direitos reservados")
