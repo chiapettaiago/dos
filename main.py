@@ -12,7 +12,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.title("Coutt Modas")
 df = pd.read_excel("exemplo.xlsx")
 st.sidebar.title("Opções do App")
-section = st.sidebar.selectbox("Funções", ["Selecionar...", "Organização de Estoque"])
+section = st.sidebar.selectbox("Funções", ["Selecionar...", "Organização de Estoque", "Inserir Produto", "Atualizar Produtos", "Deletar Produtos"])
 
 #Módulo de Consulta
 if section == "Organização de Estoque":
@@ -98,7 +98,24 @@ if section == "Organização de Estoque":
     elif seletor == 26:
         numero = df.query('ID == 26')
         st.table(numero)
-
+if section == "Inserir Produto":
+  st.text ("Insira aqui o Produto")
+  resposta1 = st.text_input("Digite o Código ou nome do Produto")
+  st.text ("Quantidade do Produto")
+  resposta2 = st.text_input("Digite a Quantidade")
+  st.text ("Digite o Preço do Produto")
+  resposta3 = st.text_input("Digite o Valor")
+if section == "Atualizar Produtos":
+  st.text ("Digite o Código ou nome do Produto")
+  resposta4 = st.text_input("Atualize o Código do Produto")
+  st.text ("Digite a Quantidade do Produto")
+  resposta5 = st.text_input("Atualize a quantidade")
+  st.text ("Digite o Preço do Produto")
+  resposta6 = ("Atualize o Valor do Produto")
+if section == "Deletar Produtos":
+  st.text ("Digite o Nome ou Código do Produto Vraus")
+  resposta7 = ("Digite o Produto a ser Deletado")
+  
 about = st.sidebar.selectbox("Informações do sistema", ["Selecionar...", "Sobre o sistema", "Política de Privacidade", "Termos de uso"])
 if about == "Sobre o sistema":
   st.header("Sistema DoS versão 0.34")
